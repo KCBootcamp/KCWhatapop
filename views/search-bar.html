@@ -1,11 +1,12 @@
 <form id="main-search-form" class= "search-form" action="/search" method="get">
-    <select class="search-select" ng-model="category" ng-controller="">
+    <select class="search-select" ng-model="categoryData" ng-controller="CategoryList">
         <option value="">All</option>
-        <option value="cat1">Categoría 1</option>
-        <option value="cat2">Categoría 2</option>
-        <option value="cat3">Categoría 3</option>
+        <option ng-repeat="category in categories" value="{{category.id}}">{{category.name}}</option>
     </select>
 
 
-    <input id="main-search-input" class="search-input" placeholder="Buscar producto..." type="text" maxlength="150" ng-model="busqueda"/>
+    <input id="main-search-input" class="search-input" placeholder="Buscar producto..." type="text" maxlength="150" ng-model="searchData"/>
+
+
+    <button type="button" ng-click="notifySearch()" class="search-button"></button>
 </form>
