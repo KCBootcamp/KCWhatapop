@@ -8,6 +8,7 @@ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
+
 .slide-image {
     width: 100%;
 }
@@ -55,6 +56,7 @@ footer {
 
 .navbar-header{
     width: inherit;
+    padding: 1em;
 }
 
 .search-input{
@@ -87,17 +89,18 @@ footer {
 }
 
 .search-form{
-    width:40em;
+    width: 70%;
+    margin-right: 15%;
+    margin-left: 15%;
     position: relative;
-    left: 32%;
 
 }
 
 .search-select{
-    width: 10em;
+    width:40%;
     color: #888888;
 }
 
 .search-input{
-    width: 20em;
+    width: 40%;
 }

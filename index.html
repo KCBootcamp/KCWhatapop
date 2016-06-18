@@ -23,6 +23,24 @@
     <!-- AngularJS -->
     <script src="node_modules/angular/angular.js"></script>
 
+    <!-- Module configuration -->
+    <script src="scripts/app.js"></script>
+
+    <!-- Services -->
+    <script src="scripts/services/service-products.js"></script>
+
+    <!-- Components -->
+    <script src="scripts/components/products.js"></script>
+
+    <!-- Filters -->
+    <script src="scripts/filters"></script>
+
+    <!-- Directives -->
+    <script src="scripts/directives"></script>
+
+    <!-- Values -->
+    <script src="scripts/values"></script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,49 +50,47 @@
 
 </head>
 
-<body ng-app>
+<body ng-app="whatapop">
 
 <!--TODO Empaquetar en componentes-->
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header col-md-12">
-                <a class="navbar-brand" href="#">Whatapop</a>
-                <button type="button"  class="navbar-btn header-button">Sign in</button>
-                <button type="button"  class="navbar-btn header-button">Register</button>
-                <button type="button"  class="navbar-btn search-button header-button"></button>
-            </div>
-            <!-- /.navbar-collapse -->
-                    <!--TODO Revisar-->
-            <div class="col-md-12">
-                <form id="main-search-form" class= "search-form" action="/search" method="get">
-                    <select class="search-select" ng-model="category">
-                        <option value="">All</option>
-                        <option value="cat1">Categoría 1</option>
-                        <option value="cat2">Categoría 2</option>
-                        <option value="cat3">Categoría 3</option>
-                    </select>
 
-
-                    <input id="main-search-input" class="search-input" placeholder="Buscar producto..." type="text" maxlength="150" ng-model="busqueda"/>
-                </form>
-            </div>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"  >
+    <div class="container">
+        <div class="navbar-header col-md-12">
+            <a class="navbar-brand" href="#">Whatapop</a>
+            <button type="button"  class="navbar-btn header-button">Sign in</button>
+            <button type="button"  class="navbar-btn header-button">Register</button>
+            <button type="button"  class="navbar-btn search-button header-button"></button>
         </div>
-        <!-- /.container -->
+        <!-- /.navbar-collapse -->
+        <!--TODO Revisar-->
+        <div class="col-md-12">
+            <form id="main-search-form" class= "search-form" action="/search" method="get">
+                <select class="search-select" ng-model="category" ng-controller="">
+                    <option value="">All</option>
+                    <option value="cat1">Categoría 1</option>
+                    <option value="cat2">Categoría 2</option>
+                    <option value="cat3">Categoría 3</option>
+                </select>
 
-    </nav>
 
+                <input id="main-search-input" class="search-input" placeholder="Buscar producto..." type="text" maxlength="150" ng-model="busqueda"/>
+            </form>
+        </div>
+    </div>
+    <!-- /.container -->
 
+</nav>
+    <div style="height: 5em;"></div>
 
     <!-- Page Content -->
-    <div class="container">
+    <section class="container">
 
+        <p ng-controller="contro">{{busqueda}}</p>
         <div class="row">
-            <div style="height: 50px;"></div>
 
-            <p>Hola estas buscando: {{category}}</p>
-
-            <div class="col-md-12">
+            <section class="col-md-12">
 
                 <!--<div class="row carousel-holder">
 
@@ -109,29 +125,29 @@
 
 
                 <!--TODO Rehacer con Angular-->
-                <div class="row">
+                <section class="row">
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                    <section class="col-sm-4 col-lg-4 col-md-4" ng-controller="ProductList">
+                        <div class="thumbnail" ng-repeat="product in products">
+                            <img src= {{product.imageURL}} alt="">
                             <div class="caption">
-                                <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#">First Product</a>
+                                <h4 class="pull-right">{{product.price}} €</h4>
+                                <h4><a href="#">{{product.name}}</a>
                                 </h4>
-                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                <p>{{product.description}}</p>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
 
 
-                </div>
+                </section>
 
-            </div>
+            </section>
 
         </div>
 
-    </div>
+    </section>
     <!-- /.container -->
 
     <div class="container">
@@ -142,7 +158,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    <p>Copyright &copy; Bhavish Chandnani 2016</p>
                 </div>
             </div>
         </footer>
