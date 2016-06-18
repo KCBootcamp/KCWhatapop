@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sparrest": "node node_modules/node-sparrest/node-sparrest.js",
-    "lite":"lite-server",
+    "lite": "lite-server",
     "start": "concurrently 'npm run sparrest' 'npm run lite'"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/KCBootcamp/KCWhatapop#readme",
   "dependencies": {
+    "@angular/router": "^0.2.0",
     "angular": "^1.5.7",
     "bootstrap": "^3.3.6",
     "jquery": "^2.2.4",
