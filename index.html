@@ -28,18 +28,22 @@
 
     <!-- Services -->
     <script src="scripts/services/service-products.js"></script>
+    <script src="scripts/services/service-categories.js"></script>
 
     <!-- Components -->
-    <script src="scripts/components/products.js"></script>
+    <script src="scripts/components/categories.js"></script>
+    <script src="scripts/components/product-list.js"></script>
+    <script src="scripts/components/search-bar.js"></script>
 
     <!-- Filters -->
-    <script src="scripts/filters"></script>
+    <!--<script src="scripts/filters"></script>-->
 
     <!-- Directives -->
-    <script src="scripts/directives"></script>
+    <!--<script src="scripts/directives/product-card.js"></script>-->
+    <script src="scripts/directives/search-bar.js"></script>
 
     <!-- Values -->
-    <script src="scripts/values"></script>
+   <!-- <script src="scripts/values"></script>-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,23 +65,11 @@
             <a class="navbar-brand" href="#">Whatapop</a>
             <button type="button"  class="navbar-btn header-button">Sign in</button>
             <button type="button"  class="navbar-btn header-button">Register</button>
-            <button type="button"  class="navbar-btn search-button header-button"></button>
         </div>
         <!-- /.navbar-collapse -->
-        <!--TODO Revisar-->
-        <div class="col-md-12">
-            <form id="main-search-form" class= "search-form" action="/search" method="get">
-                <select class="search-select" ng-model="category" ng-controller="">
-                    <option value="">All</option>
-                    <option value="cat1">Categoría 1</option>
-                    <option value="cat2">Categoría 2</option>
-                    <option value="cat3">Categoría 3</option>
-                </select>
 
+            <search-bar class="col-md-12" on-button-click=""></search-bar>
 
-                <input id="main-search-input" class="search-input" placeholder="Buscar producto..." type="text" maxlength="150" ng-model="busqueda"/>
-            </form>
-        </div>
     </div>
     <!-- /.container -->
 
@@ -86,62 +78,14 @@
 
     <!-- Page Content -->
     <section class="container">
-
-        <p ng-controller="contro">{{busqueda}}</p>
         <div class="row">
 
             <section class="col-md-12">
 
-                <!--<div class="row carousel-holder">
-
-                    <div class="col-md-12">
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                                <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
-                                </div>
-                            </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>-->
 
 
-                <!--TODO Rehacer con Angular-->
-                <section class="row">
+                <product-list></product-list>
 
-                    <section class="col-sm-4 col-lg-4 col-md-4" ng-controller="ProductList">
-                        <div class="thumbnail" ng-repeat="product in products">
-                            <img src= {{product.imageURL}} alt="">
-                            <div class="caption">
-                                <h4 class="pull-right">{{product.price}} €</h4>
-                                <h4><a href="#">{{product.name}}</a>
-                                </h4>
-                                <p>{{product.description}}</p>
-                            </div>
-                        </div>
-                    </section>
-
-
-
-                </section>
 
             </section>
 

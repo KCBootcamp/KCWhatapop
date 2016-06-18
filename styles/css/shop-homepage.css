@@ -70,8 +70,8 @@ footer {
 
 .search-button{
     background-image: url("/images/search_ico.png");
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
 }
 
 .header-button {
@@ -103,4 +103,8 @@ footer {
 
 .search-input{
     width: 40%;
+}
+
+.product-card{
+    padding-bottom: 2%;
 }
