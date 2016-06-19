@@ -3,8 +3,5 @@ angular.module("whatapop")
         templateUrl:"views/nav-bar.html",
         controller: function () {
             
-        },
-        bindings:{
-
         }
     });
