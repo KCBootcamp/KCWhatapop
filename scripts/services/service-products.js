@@ -1,8 +1,14 @@
 angular
     .module("whatapop")
-    .service("ServiceProducts", function ($http) {
+    .service("ServiceProducts", ["$http","Properties",function ($http,Properties) {
         this.getProducts = function () {
-            return $http.get("http://localhost:8000/api/products");
+            return $http.get(Properties.devServerUrl+Properties.endpointProducts);
         };
-    })
+
+        this.getProductWithId = function(id) {
+
+            return $http.get(Properties.devServerUrl+Properties.endpointProducts + "/" + id);
+        };
+    }])
+
 ;
