@@ -3,6 +3,7 @@
 
 <head>
 
+    <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,15 +33,16 @@
     <script src="scripts/services/service-categories.js"></script>
 
     <!-- Components -->
-    <script src="scripts/components/categories.js"></script>
     <script src="scripts/components/product-list.js"></script>
-    <script src="scripts/components/search-bar.js"></script>
+    <script src="scripts/components/product-detail.js"></script>
+    <!--<script src="scripts/components/search-bar.js"></script>-->
+    <script src="scripts/components/nav-bar.js"></script>
+    <script src="scripts/components/root.js"></script>
 
     <!-- Filters -->
     <!--<script src="scripts/filters"></script>-->
 
     <!-- Directives -->
-    <!--<script src="scripts/directives/product-card.js"></script>-->
     <script src="scripts/directives/search-bar.js"></script>
 
     <!-- Values -->
@@ -57,9 +59,12 @@
 
 <body ng-app="whatapop">
 
+<root></root>
+
 <!--TODO Empaquetar en componentes-->
     <!-- Navigation -->
 
+<!--
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"  >
     <div class="container">
         <div class="navbar-header col-md-12">
@@ -67,17 +72,17 @@
             <button type="button"  class="navbar-btn header-button">Sign in</button>
             <button type="button"  class="navbar-btn header-button">Register</button>
         </div>
-        <!-- /.navbar-collapse -->
+        &lt;!&ndash; /.navbar-collapse &ndash;&gt;
 
             <search-bar class="col-md-12" on-button-click=""></search-bar>
 
     </div>
-    <!-- /.container -->
+    &lt;!&ndash; /.container &ndash;&gt;
 
-</nav>
+</nav>-->
     <div style="height: 5em;"></div>
-
-    <!-- Page Content -->
+<!--
+    &lt;!&ndash; Page Content &ndash;&gt;
     <section class="container">
         <div class="row">
 
@@ -92,24 +97,10 @@
 
         </div>
 
-    </section>
+    </section>-->
     <!-- /.container -->
 
-    <div class="container">
 
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Bhavish Chandnani 2016</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
