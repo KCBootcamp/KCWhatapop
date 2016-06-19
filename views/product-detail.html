@@ -1,24 +1,13 @@
-<!--<section class="col-md-12" >
-    <div class="thumbnail" >
-        <img src= {{product.photos[0]}} alt="">
-        <div class=" col-md-12">
-            <h4 class="pull-right product-price">{{product.price}} €</h4>
-            <h4 class="product-name"><a ng-link="['/ProductDetail',{id:product.name}]"></a>
-            </h4>
-            <p class="caption">{{product.description}}</p>
-        </div>
-    </div>
-</section>-->
-
-
+<!--TODO poner todos los datos del producto en el detalle-->
         <div class="container">
+            <a ng-link="['ProductList']">Atrás</a>
             <div class="menu row">
                 <div class="product col-sm-6">
-                    <a href="#"><img class="img-responsive" src="/assets/example/ec_guy.jpg"><i class="btn btn-product fa fa-star"></i></a>
+                    <a href="#"><img class="img-responsive" src={{product.photos[0]}}><i class="btn btn-product fa fa-star"></i></a>
                     <hr>
-                    <h2>{{product.name}}</h2>
+                    <h2>{{$ctrl.product.name}}</h2>
 
-                    <h2 class="text-right">{{product.price}} €</h2>
+                    <h2 class="text-right">{{$ctrl.product.price}} €</h2>
                     <button class="btn btn-primary btn-lg ">Comprar</button>
                     <hr>
 
