@@ -1,22 +1,24 @@
 angular.module("whatapop")
     .component("searchBar", {
         templateUrl:"views/search-bar.html",
-        controller: function () {
+            bindings:{
+                    $router:"<"
+            },
+        controller: ["ServiceCategories", function (ServiceCategories) {
                 var self=this;
                 ServiceCategories.getCategories().then(function (res) {
                         self.categories = res.data;
 
-                        console.log("Obtnenidas categorias", categories);
+                        console.log("Obtnenidas categorias", self.categories);
                 });
 
 
-                scope.notifySearch = function () {
-                        scope.onButtonClick({searchData: scope.searchData,
-                                categoryData: scope.categoryData});
-                        console.log("Notificando click", scope.searchData, scope.categoryData);
-                };
-        },
-        bindings:{
+                self.notifySearch = function () {
 
-        }
+                        self.onButtonClick({searchData: self.searchData,
+                                categoryData: self.categoryData});
+                        console.log("Notificando click", self.searchData, self.categoryData);
+                };
+        }]
+
     });

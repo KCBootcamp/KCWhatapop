@@ -5,6 +5,8 @@ angular.module("whatapop")
             templateUrl:"views/search-bar.html",
             scope:{
                 categories:"@",
+                categoryData:"@",
+                searchData:"@",
                 onButtonClick:"&"
             },
             link: function (scope) {
@@ -14,11 +16,7 @@ angular.module("whatapop")
                     console.log("Obtnenidas categorias", scope.categories);
                 });
 
-                 scope.notifySearch = function () {
-                    scope.onButtonClick({searchData: scope.searchData,
-                        categoryData: scope.categoryData});
-                     console.log("Notificando click", scope.searchData, scope.categoryData);
-                 };
+                
             }
         };
 

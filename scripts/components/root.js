@@ -14,3 +14,4 @@ angular.module("whatapop")
         ],
         templateUrl: "views/root.html"
     });
+  
