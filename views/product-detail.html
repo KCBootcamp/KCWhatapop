@@ -1,29 +1,26 @@
-<!--TODO poner todos los datos del producto en el detalle-->
-        <div class="container">
-            <a ng-link="['ProductList']">Atrás</a>
-            <div class="menu row">
-                <div class="product col-sm-6">
-                    <a href="#"><img class="img-responsive" src={{product.photos[0]}}><i class="btn btn-product fa fa-star"></i></a>
-                    <hr>
-                    <h2>{{$ctrl.product.name}}</h2>
-
-                    <h2 class="text-right">{{$ctrl.product.price}} €</h2>
-                    <button class="btn btn-primary btn-lg ">Comprar</button>
-                    <hr>
-
-                    <div>
-                        <img ng-repeat="photo in product.photos" src={{photo}}>
-                    </div>
-
-
-                </div>
-                <div class="col-sm-6">
-                    <div class="productsrow">
-                        <p>{{product.description}}</p>
-                        <hr>
-
-                    </div>
-                </div>
+<div class="container details">
+    <div class="menu row">
+        <div class="product col-sm-8">
+            <img class="img-responsive" ng-src={{$ctrl.imageDisplayed}}></i>
+            <div class="photo-gallery">
+                <img  class="img-thumbnail photo-gallery-image" ng-click="$ctrl.displayImage(photo)" ng-repeat="photo in ::$ctrl.product.photos" ng-src={{photo}} >
             </div>
-            <!--/row-->
+            <hr>
+            <h2>{{::$ctrl.product.name}}</h2>
+            <p>{{$ctrl.product.description | htmlToPlaintext}}</p>
+            <hr>
         </div>
+        <div class="col-sm-4 text-center">
+            <h2>{{::$ctrl.product.price | currency}}</h2>
+            <h4>Category: {{::$ctrl.product.category.name}}</h4>
+            <div>
+                <h4>Seller:</h4>
+                <img class="avatar img-circle" ng-src={{::$ctrl.product.seller.avatar}}>
+                <p>{{::$ctrl.product.seller.nick}}</p>
+            </div>
+            <button class=" btn btn-primary btn-md btn-lg">Comprar</button>
+        </div>
+    </div>
+    <!--/row-->
+    <h3><a  class="back-button" ng-link="['ProductList']">Atrás</a></h3>
+</div>

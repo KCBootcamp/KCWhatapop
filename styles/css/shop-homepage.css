@@ -117,3 +117,29 @@ footer {
 .product-card{
     padding-bottom: 2%;
 }
+
+.back-button{
+    margin-right: 2em;
+    float: right;
+
+}
+
+.avatar{
+    image-rendering: auto;
+    max-height: 150px;
+    max-width: 150px;
+}
+
+
+.photo-gallery-image{
+    display: inline-block;
+    max-height: 100px;
+    width: auto;
+}
+
+.buy-button{
+    width: inherit;
+    margin-left: 30%;
+    margin-rigth: 30%;
+
+}

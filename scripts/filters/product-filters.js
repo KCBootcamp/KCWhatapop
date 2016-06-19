@@ -5,5 +5,4 @@ angular.module("whatapop")
         }
     }
     )
-    .filter ('')
 ;
