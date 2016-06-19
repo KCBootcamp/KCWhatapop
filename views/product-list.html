@@ -1,13 +1,28 @@
-<section class="row" >
-    <section class="col-sm-4 col-lg-4 col-md-4 product-card" ng-repeat="product in $ctrl.products">
+<div>
+<div class= "col-md-12 search-form search-bar">
+    <select class="search-select" ng-model="$ctrl.searchData.category.id">
+        <option value="">All</option>
+        <option ng-repeat="category in $ctrl.categories" value={{category.id}}>{{category.name}}</option>
+
+    </select>
+
+    <input id="main-search-input" class="search-input" placeholder="Buscar producto..." type="text" maxlength="150" ng-model="$ctrl.searchData.name"/>
+</div>
+<section class="row col col-md-12 product-list" >
+    <!--<search-bar class="col-md-12 search-bar" ></search-bar>-->
+
+
+    <section class="col-sm-4 col-lg-4 col-md-4 product-card" ng-show="$ctrl.products.length>0" ng-repeat="product in $ctrl.products |filter: $ctrl.searchData">
         <div class="thumbnail" >
             <img src= {{product.photos[0]}} alt="">
             <div class=" col-md-12">
-                <h4 class="pull-right product-price">{{product.price}} €</h4>
-                <h4 class="product-name"><a ng-link="['/ProductDetail',{id:product.name}]">{{product.name}}</a>
-                </h4>
-                <p class="caption">{{product.description}}</p>
+                <h4 class="pull-right product-price">{{product.price | currency}}</h4>
+                <!--<h4 class="product-name"><a ng-link="['/ProductDetail',{id:product.name}]">{{ product.name}}</a></h4>-->
+                <h4 class="product-name" onclick="$ctrl.productClicked(product)">{{product.name}}</h4>
+                <p class="caption">{{product.description | htmlToPlaintext}}</p>
+                <!--<small >{{product.category.name}}</small>-->
             </div>
         </div>
     </section>
 </section>
+</div>
