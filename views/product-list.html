@@ -14,11 +14,16 @@
 
     <section class="col-sm-4 col-lg-4 col-md-4 product-card" ng-show="$ctrl.products.length>0" ng-repeat="product in $ctrl.products |filter: $ctrl.searchData">
         <div class="thumbnail" >
-            <img ng-src= {{::product.photos[0]}} alt="">
+
+            <img  ng-src= {{::product.photos[0]}} alt="">
+
+
             <div class=" col-md-12">
+
                 <h4 class="pull-right product-price">{{::product.price | currency}}</h4>
                 <!--<h4 class="product-name"><a ng-link="['/ProductDetail',{id:product.name}]">{{ product.name}}</a></h4>-->
                 <h4 class="product-name"> <a ng-link="['ProductDetail', { id: product.id }]">{{::product.name}}</a></h4>
+                <p><img  class="img-thumbnail star-list img-responsive" ng-src="{{$ctrl.setFavoriteIcon(product.id)}}"></p>
                 <p class="caption">{{::product.description | htmlToPlaintext}}</p>
             </div>
         </div>

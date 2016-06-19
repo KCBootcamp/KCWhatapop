@@ -9,6 +9,16 @@ angular
 
             return $http.get(Properties.devServerUrl+Properties.endpointProducts + "/" + id);
         };
+        
+        this.getFavoritesProducts= function () {
+            return JSON.parse(localStorage.getItem("Favorites"));
+        };
+        
+        this.setFavoritesProducts= function (favoriteProducts) {
+            localStorage.setItem("Favorites", JSON.stringify(favoriteProducts));
+        };
+
+        
     }])
 
 ;

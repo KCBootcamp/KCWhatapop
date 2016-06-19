@@ -143,3 +143,17 @@ footer {
     margin-rigth: 30%;
 
 }
+
+.star-icon{
+    width: 100px;
+    height: auto;
+
+}
+
+
+
+.star-list{
+    max-width: 50px; !important;
+    height: auto;
+    border-color: transparent;
+}

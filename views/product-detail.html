@@ -12,6 +12,8 @@
 
         </div>
         <div class="col-sm-4 text-center">
+            <h2>Marcar como favorito</h2>
+            <img ng-click="$ctrl.changeFavoriteStatus()" class="star-icon" ng-src="{{$ctrl.favoriteImageUrl}}">
             <h2>{{::$ctrl.product.price | currency}}</h2>
             <h4>Categoría: {{::$ctrl.product.category.name}}</h4>
             <div>
