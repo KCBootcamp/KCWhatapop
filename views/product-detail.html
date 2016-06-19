@@ -9,15 +9,17 @@
             <h2>{{::$ctrl.product.name}}</h2>
             <p>{{$ctrl.product.description | htmlToPlaintext}}</p>
             <hr>
+
         </div>
         <div class="col-sm-4 text-center">
             <h2>{{::$ctrl.product.price | currency}}</h2>
-            <h4>Category: {{::$ctrl.product.category.name}}</h4>
+            <h4>Categoría: {{::$ctrl.product.category.name}}</h4>
             <div>
-                <h4>Seller:</h4>
+                <h4>Vendedor:</h4>
                 <img class="avatar img-circle" ng-src={{::$ctrl.product.seller.avatar}}>
                 <p>{{::$ctrl.product.seller.nick}}</p>
             </div>
+            <p>Producto publicado: {{$ctrl.product.published_date | date}}</p>
             <button class=" btn btn-primary btn-md btn-lg">Comprar</button>
         </div>
     </div>

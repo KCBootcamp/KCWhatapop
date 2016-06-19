@@ -3,7 +3,6 @@ angular.module("whatapop")
         templateUrl:"views/product-list.html",
         bindings:{
             router:"<",
-            productSelected:"&"
         },
         controller: ["ServiceProducts", "ServiceCategories",function (ServiceProducts,ServiceCategories) {
             var self=this;
@@ -20,3 +19,4 @@ angular.module("whatapop")
             });
         }]
     });
+
