@@ -1,14 +1,19 @@
 angular.module("whatapop")
-    .directive("bvcSearchBar",  function () {
+    .directive("searchBar", ["ServiceCategories", function (ServiceCategories) {
         return{
             restrict:"EA",
             templateUrl:"views/search-bar.html",
             scope:{
-                sources: "@",
-                displayInline:"@",
+                categories:"@",
                 onButtonClick:"&"
             },
             link: function (scope) {
+                ServiceCategories.getCategories().then(function (res) {
+                    scope.categories = res.data;
+
+                    console.log("Obtnenidas categorias", scope.categories);
+                });
+
                  scope.notifySearch = function () {
                     scope.onButtonClick({searchData: scope.searchData,
                         categoryData: scope.categoryData});
@@ -17,4 +22,4 @@ angular.module("whatapop")
             }
         };
 
-    });
+    }]);
